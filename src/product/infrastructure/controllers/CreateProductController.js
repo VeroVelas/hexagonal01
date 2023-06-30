@@ -28,7 +28,7 @@ class CreateProductController {
                             id: product === null || product === void 0 ? void 0 : product.id,
                             name: product === null || product === void 0 ? void 0 : product.name,
                             description: product === null || product === void 0 ? void 0 : product.description,
-                            price: product === null || product === void 0 ? void 0 : product.price,
+                            price: product === null || product === void 0 ? void 0 : product.price
                         },
                     });
                 else

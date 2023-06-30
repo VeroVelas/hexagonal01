@@ -17,7 +17,7 @@ const amqplib_1 = __importDefault(require("amqplib"));
 const express_1 = __importDefault(require("express"));
 const config = {
     protocol: "amqp",
-    hostname: "44.208.72.218",
+    hostname: "54.226.88.234",
     port: 5672,
     username: "llaverito",
     password: "sainz097",
