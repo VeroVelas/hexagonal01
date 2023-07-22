@@ -27,8 +27,8 @@ class GetAllProductController {
                             return {
                                 id: product.id,
                                 name: product.name,
-                                description: product.description,
-                                price: product.price,
+                                contraseña: product.contraseña,
+                                raza: product.raza,
                             };
                         }),
                     });

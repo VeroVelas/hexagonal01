@@ -19,7 +19,7 @@ class CreateProductController {
             const data = req.body;
             console.log("mensaje  " + data);
             try {
-                const product = yield this.createProductUseCase.run(data.name, data.description, data.price);
+                const product = yield this.createProductUseCase.run(data.name, data.contraseña, data.raza);
                 if (product)
                     //Code HTTP : 201 -> Creado
                     res.status(201).send({
@@ -27,8 +27,8 @@ class CreateProductController {
                         data: {
                             id: product === null || product === void 0 ? void 0 : product.id,
                             name: product === null || product === void 0 ? void 0 : product.name,
-                            description: product === null || product === void 0 ? void 0 : product.description,
-                            price: product === null || product === void 0 ? void 0 : product.price
+                            contraseña: product === null || product === void 0 ? void 0 : product.contraseña,
+                            raza: product === null || product === void 0 ? void 0 : product.raza
                         },
                     });
                 else

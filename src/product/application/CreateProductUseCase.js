@@ -14,10 +14,10 @@ class CreateProductUseCase {
     constructor(productRepository) {
         this.productRepository = productRepository;
     }
-    run(name, description, price) {
+    run(name, contraseña, raza) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const product = yield this.productRepository.createProduct(name, description, price);
+                const product = yield this.productRepository.createProduct(name, contraseña, raza);
                 return product;
             }
             catch (error) {

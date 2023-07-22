@@ -19,7 +19,7 @@ class MysqlProductRepository {
             try {
                 const [data] = yield (0, mysql_1.query)(sql, []);
                 const dataProducts = Object.values(JSON.parse(JSON.stringify(data)));
-                return dataProducts.map((product) => new Product_1.Product(product.id, product.name, product.description, product.price));
+                return dataProducts.map((product) => new Product_1.Product(product.id, product.name, product.contraseña, product.raza));
             }
             catch (error) {
                 return null;
@@ -35,23 +35,23 @@ class MysqlProductRepository {
                 //El objeto Result es un objeto que contiene info generada de la bd
                 /*No es necesaria la validación de la cantidad de filas afectadas, ya que, al
                       estar dentro de un bloque try/catch si hay error se captura en el catch */
-                return new Product_1.Product(result[0].id, result[0].name, result[0].description, result[0].price);
+                return new Product_1.Product(result[0].id, result[0].name, result[0].contraseña, result[0].raza);
             }
             catch (error) {
                 return null;
             }
         });
     }
-    createProduct(name, description, price) {
+    createProduct(name, contraseña, raza) {
         return __awaiter(this, void 0, void 0, function* () {
-            const sql = "INSERT INTO product (name, description, price) VALUES (?, ?, ?)";
-            const params = [name, description, price];
+            const sql = "INSERT INTO product (name, contraseña, raza) VALUES (?, ?, ?)";
+            const params = [name, contraseña, raza];
             try {
                 const [result] = yield (0, mysql_1.query)(sql, params);
                 //El objeto Result es un objeto que contiene info generada de la bd
                 /*No es necesaria la validación de la cantidad de filas afectadas, ya que, al
                       estar dentro de un bloque try/catch si hay error se captura en el catch */
-                return new Product_1.Product(result.insertId, name, description, price);
+                return new Product_1.Product(result.insertId, name, contraseña, raza);
             }
             catch (error) {
                 return null;
