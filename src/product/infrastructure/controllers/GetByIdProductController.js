@@ -24,7 +24,7 @@ class GetByIdProductController {
                     res.status(200).send({
                         status: "success",
                         data: {
-                            name: product.name,
+                            name: product.name
                         },
                     });
                 else
